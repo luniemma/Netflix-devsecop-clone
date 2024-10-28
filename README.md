@@ -204,7 +204,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/luniemma/Netflix-devsecop-clone.git'
             }
         }
         stage("Sonarqube Analysis") {
@@ -294,7 +294,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/luniemma/Netflix-devsecop-clone.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -332,9 +332,9 @@ pipeline{
             steps{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
-                       sh "docker build --build-arg TMDB_V3_API_KEY=<yourapikey> -t netflix ."
-                       sh "docker tag netflix nasi101/netflix:latest "
-                       sh "docker push nasi101/netflix:latest "
+                       sh "docker build --build-arg TMDB_V3_API_KEY=29860aa9e29cefae38c2d39f0e1dbdc3 -t netflix ."
+                       sh "docker tag netflix luniemma/netflix:latest "
+                       sh "docker push luniemma/netflix:latest "
                     }
                 }
             }
@@ -346,7 +346,7 @@ pipeline{
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 8081:80 nasi101/netflix:latest'
+                sh 'docker run -d --name netflix -p 8081:80 luniemma/netflix:latest'
             }
         }
     }

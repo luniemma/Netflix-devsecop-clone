@@ -355,12 +355,7 @@ pipeline{
 
 If you get docker login failed errorr
 
-sudo su
-sudo usermod -aG docker jenkins
-sudo systemctl restart jenkins
 
-
-```
 
 **Phase 4: Monitoring**
 
@@ -377,7 +372,7 @@ sudo systemctl restart jenkins
    wget https://github.com/prometheus/prometheus/releases/download/v2.47.1/prometheus-2.47.1.linux-amd64.tar.gz
    ```
 
-   Extract Prometheus files, move them, and create directories:
+   Extract Prometheus files, move them, and create directo
 
    ```bash
    tar -xvf prometheus-2.47.1.linux-amd64.tar.gz

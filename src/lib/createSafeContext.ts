@@ -1,4 +1,4 @@
-import React from "react";
+import React from "rkeact";
 
 export default function createSafeContext<TValue extends {} | null>() {
   const context = React.createContext<TValue | undefined>(undefined);
